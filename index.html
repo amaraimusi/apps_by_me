@@ -24,9 +24,210 @@
 
 <h2>目次</h2>
 <ul>
+	<li><a href="#web_apps_index">見本WEBアプリ</a></li>
 	<li><a href="#web_tool_index">WEBツール</a></li>
 	<li><a href="#js_lib_index">JavaScriptライブラリ</a></li>
 </ul>
+
+<div id="web_apps_index" class="sec3">
+	<h3>見本WEBアプリ</h3>
+	
+	
+	
+	<table class="table">
+	<thead><tr><th>WEBアプリ名</th><th>説明</th></tr></thead>
+	<tbody>
+		<tr>
+			<td><a href="/cb_red_book">レッドデータブック</a><br>2018年</td>
+			<td>
+				基本的なWEBアプリの見本。3画面からなる。<br>
+				<aside>絶滅危惧種画面、綱画面、絶滅危惧種カテゴリー画面。非公開であるがログインユーザー管理画面も存在する。</aside><br>
+				<input type="button" value="機能一覧" onclick="jQuery('#wai_cb_red_book_ul').toggle(300)" class="btn btn-info" />
+				<a href="/cb_red_book" class="btn btn-info">見本</a>
+				<ul id="wai_cb_red_book_ul" style="display:none">
+					<li>一覧表示</li>
+					<li>
+						追加/編集/削除/<a href="#cb_red_book_f2" class="livipage">抹消</a>
+						<aside id="cb_red_book_f2" style="display:none">
+							削除と抹消の違い。<br>
+							削除は削除フラグを立てるだけでデータベースから消えるわけではない。<br>
+							抹消はデータそのものをデータベースから消去する。<br>
+							削除フラグがONのデータのみ抹消できる。（一度削除してから抹消という流れ）<br>
+						</aside>
+					</li>
+					<li>検索/詳細検索</li>
+					<li>
+						
+						<a href="#cb_red_book_f4" class="livipage">初期戻し機能</a>
+						<aside id="cb_red_book_f4" style="display:none">
+							最初にページを開いた時の状態に戻す機能。<br>
+							上部メニューに存在する
+							<span class="btn btn-info btn-xs"><span class="glyphicon glyphicon-certificate"></span></span>
+							ボタンを押すと、検索されている状態や、一覧ソートされている状態をリセットして初期状態に戻すことができる。
+						</aside>
+					</li>
+					<li>
+						<a href="#cb_red_book_f5" class="livipage">列表示切替機能</a>
+						<aside id="cb_red_book_f5" style="display:none">
+							一覧の特定の列を隠したり、再表示したりできる機能。<br>
+						</aside>
+					</li>
+					<li>
+						<a href="#cb_red_book_f6" class="livipage">セッションクリア機能</a>
+						<aside id="cb_red_book_f6" style="display:none">
+							当画面で保存しているセッションをクリアする機能。<br>
+						</aside>
+					</li>
+					<li>
+						<a href="#cb_red_book_f7" class="livipage">一覧変形機能</a>
+						<aside id="cb_red_book_f7" style="display:none">
+							一覧表示は2タイプあり、行列型と縦型が存在する。<br>
+							行列型は一般的な列と行からなるテーブル構造。
+							縦型はスマホ向けを想定しており、各項目を縦に並べる。<br>
+							上部メニューの<span class="btn btn-default btn-xs"><span class="glyphicon glyphicon-th-large" title="一覧の変形・区分モード"></span></span>
+							ボタンを押すことで切替ができる。<br>
+							カスタマイズで縦型を初期状態にすることも可。<br>
+						</aside>
+					</li>
+					<li>
+						<a href="#cb_red_book_f8" class="livipage">ページネーション（目次）</a>
+						<aside id="cb_red_book_f8" style="display:none">
+							データ数（行数）が増えた時、ページ分けする機能。<br>
+							検索機能の「表示件数」で1ページに表示する行数を指定できる。<br>
+						</aside>
+					</li>
+					<li>
+						<a href="#cb_red_book_f9" class="livipage">一括削除/有効</a>
+						<aside id="cb_red_book_f9" style="display:none">
+							まとめて削除および有効にする機能。<br>
+							一覧の左側チェックボックスにチェックを入れ、一覧の下にある「削除」または「有効」ボタンを押す。<br>
+						</aside>
+					</li>
+					<li>
+						<a href="#cb_red_book_f10" class="livipage">ソート機能（並べ替え）</a>
+						<aside id="cb_red_book_f10" style="display:none">
+							一覧の列名リンクをクリックするとその列のデータで昇順並べ替えを行う。<br>
+							もう一度クリックすると降順並べ替えを行う。<br>
+							並べ替え状態は「初期戻し機能」で解除することができる。<br>
+						</aside>
+					</li>
+					<li>
+						<a href="#cb_red_book_f11" class="livipage">行入替機能</a>
+						<aside id="cb_red_book_f11" style="display:none">
+							行を入れ替える機能。<br>
+							一覧の左側に存在する<span class="btn btn-info btn-xs">↑↓</span>ボタンをクリックを押すと、
+							行入替フォームが現れ、行を上下に移動させたり、指定位置にジャンプさせたりできる。<br>
+						</aside>
+					</li>
+				</ul>
+				
+			</td>
+		</tr>
+		
+		
+		<tr>
+			<td><a href="/cake_demo">原本WEBシステム</a><br>2018年</td>
+			<td>
+				<br>
+				各WEBアプリの原本。<br>
+				パッケージ的なもので、このシステムを元に様々なWEBアプリを開発している。<br>
+				元々はCakePHPのシステムであったが、現在はJavaScriptによるフロントエンド部分に重きをおいたシステムになっている。<br>
+				そのためWordPressプラグインやサーバーサイドJavaなどにも対応できる。<br>ライセンスはMITにしている。<br>
+				随時、新機能を開発してはバージョンアップを重ねている。<br>
+
+				<input type="button" value="機能一覧" onclick="jQuery('#wai_cake_demo_ul').toggle(300)" class="btn btn-info" />
+				<a href="/cake_demo" class="btn btn-info">見本</a>
+				<ul id="wai_cake_demo_ul" style="display:none">
+					<li>
+						<a href="#cake_demo_fb1" class="livipage">ファイルアップロード機能</a>
+						<aside id="cake_demo_fb1" style="display:none">
+							編集フォームや新規入力フォームからファイルアップロードができる。<br>
+							独自で開発したJSライブラリ
+							「<a href="/note_prg/JavaScript/file_note.html#sec1-5">FileUploadsK.js</a>」を使っており、
+							ドラッグ＆ドロップや画像プレビューなどに対応している。
+						</aside>
+					</li>
+					<li>一覧表示</li>
+					<li>
+						追加/編集/複製/削除/<a href="#cake_demo_f2" class="livipage">抹消</a>
+						<aside id="cake_demo_f2" style="display:none">
+							削除と抹消の違い。<br>
+							削除は削除フラグを立てるだけでデータベースから消えるわけではない。<br>
+							抹消はデータそのものをデータベースから消去する。<br>
+							削除フラグがONのデータのみ抹消できる。（一度削除してから抹消という流れ）<br>
+						</aside>
+					</li>
+					<li>検索/詳細検索</li>
+					<li>
+						
+						<a href="#cake_demo_f4" class="livipage">初期戻し機能</a>
+						<aside id="cake_demo_f4" style="display:none">
+							最初にページを開いた時の状態に戻す機能。<br>
+							上部メニューに存在する
+							<span class="btn btn-info btn-xs"><span class="glyphicon glyphicon-certificate"></span></span>
+							ボタンを押すと、検索されている状態や、一覧ソートされている状態をリセットして初期状態に戻すことができる。
+						</aside>
+					</li>
+					<li>
+						<a href="#cake_demo_f5" class="livipage">列表示切替機能</a>
+						<aside id="cake_demo_f5" style="display:none">
+							一覧の特定の列を隠したり、再表示したりできる機能。<br>
+						</aside>
+					</li>
+					<li>
+						<a href="#cake_demo_f6" class="livipage">セッションクリア機能</a>
+						<aside id="cake_demo_f6" style="display:none">
+							当画面で保存しているセッションをクリアする機能。<br>
+						</aside>
+					</li>
+					<li>
+						<a href="#cake_demo_f7" class="livipage">一覧変形機能</a>
+						<aside id="cake_demo_f7" style="display:none">
+							一覧表示は2タイプあり、行列型と縦型が存在する。<br>
+							行列型は一般的な列と行からなるテーブル構造。
+							縦型はスマホ向けを想定しており、各項目を縦に並べる。<br>
+							上部メニューの<span class="btn btn-default btn-xs"><span class="glyphicon glyphicon-th-large" title="一覧の変形・区分モード"></span></span>
+							ボタンを押すことで切替ができる。<br>
+							カスタマイズで縦型を初期状態にすることも可。<br>
+						</aside>
+					</li>
+					<li>
+						<a href="#cake_demo_f8" class="livipage">ページネーション（目次）</a>
+						<aside id="cake_demo_f8" style="display:none">
+							データ数（行数）が増えた時、ページ分けする機能。<br>
+							検索機能の「表示件数」で1ページに表示する行数を指定できる。<br>
+						</aside>
+					</li>
+					<li>
+						<a href="#cake_demo_f9" class="livipage">一括削除/有効</a>
+						<aside id="cake_demo_f9" style="display:none">
+							まとめて削除および有効にする機能。<br>
+							一覧の左側チェックボックスにチェックを入れ、一覧の下にある「削除」または「有効」ボタンを押す。<br>
+						</aside>
+					</li>
+					<li>
+						<a href="#cake_demo_f10" class="livipage">ソート機能（並べ替え）</a>
+						<aside id="cake_demo_f10" style="display:none">
+							一覧の列名リンクをクリックするとその列のデータで昇順並べ替えを行う。<br>
+							もう一度クリックすると降順並べ替えを行う。<br>
+							並べ替え状態は「初期戻し機能」で解除することができる。<br>
+						</aside>
+					</li>
+					<li>
+						<a href="#cake_demo_f11" class="livipage">行入替機能</a>
+						<aside id="cake_demo_f11" style="display:none">
+							行を入れ替える機能。<br>
+							一覧の左側に存在する<span class="btn btn-info btn-xs">↑↓</span>ボタンをクリックを押すと、
+							行入替フォームが現れ、行を上下に移動させたり、指定位置にジャンプさせたりできる。<br>
+						</aside>
+					</li>
+				</ul>
+				
+			</td>
+		</tr>
+	</tbody></table>
+
+</div>
 
 <div id="web_tool_index" class="sec3">
 	<h3>WEBツール</h3>
