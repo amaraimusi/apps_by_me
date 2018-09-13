@@ -37,6 +37,126 @@
 	<table class="table">
 	<thead><tr><th>WEBアプリ名</th><th>説明</th></tr></thead>
 	<tbody>
+		
+		
+		<tr>
+			<td><a href="/okianim">沖縄の動物</a><br>2018年</td>
+			<td>
+				<br>
+				画像<strong>ファイルアップロード</strong>を特色とするWEBアプリの見本。2画面からなる。<br>
+				<aside>沖縄動物画面、動物カテゴリ画面から構成されている。</aside><br>
+
+				<input type="button" value="機能一覧" onclick="jQuery('#wai_okianim_ul').toggle(300)" class="btn btn-info" />
+				<a href="/okianim" class="btn btn-info">見本</a>
+				<ul id="wai_okianim_ul" style="display:none">
+					<li>
+						<a href="#okianim_fb1" class="livipage">ファイルアップロード機能</a>
+						<aside id="okianim_fb1" style="display:none">
+							編集フォームや新規入力フォームからファイルアップロードができる。<br>
+							独自で開発したJSライブラリ
+							「<a href="/note_prg/JavaScript/file_note.html#sec1-5">FileUploadsK.js</a>」を使っており、
+							ドラッグ＆ドロップや画像プレビューなどに対応している。
+						</aside>
+					</li>
+					<li>一覧表示</li>
+					<li>
+						追加/編集/複製/削除/<a href="#okianim_f2" class="livipage">抹消</a>
+						<aside id="okianim_f2" style="display:none">
+							削除と抹消の違い。<br>
+							削除は削除フラグを立てるだけでデータベースから消えるわけではない。<br>
+							抹消はデータそのものをデータベースから消去する。<br>
+							削除フラグがONのデータのみ抹消できる。（一度削除してから抹消という流れ）<br>
+						</aside>
+					</li>
+					<li>検索/詳細検索</li>
+					<li>
+						
+						<a href="#okianim_f4" class="livipage">初期戻し機能</a>
+						<aside id="okianim_f4" style="display:none">
+							最初にページを開いた時の状態に戻す機能。<br>
+							上部メニューに存在する
+							<span class="btn btn-info btn-xs"><span class="glyphicon glyphicon-certificate"></span></span>
+							ボタンを押すと、検索されている状態や、一覧ソートされている状態をリセットして初期状態に戻すことができる。
+						</aside>
+					</li>
+					<li>
+						<a href="#okianim_f5" class="livipage">列表示切替機能</a>
+						<aside id="okianim_f5" style="display:none">
+							一覧の特定の列を隠したり、再表示したりできる機能。<br>
+						</aside>
+					</li>
+					<li>
+						<a href="#okianim_f6" class="livipage">セッションクリア機能</a>
+						<aside id="okianim_f6" style="display:none">
+							当画面で保存しているセッションをクリアする機能。<br>
+						</aside>
+					</li>
+					<li>
+						<a href="#okianim_f7" class="livipage">一覧変形機能</a>
+						<aside id="okianim_f7" style="display:none">
+							一覧表示は2タイプあり、行列型と縦型が存在する。<br>
+							行列型は一般的な列と行からなるテーブル構造。
+							縦型はスマホ向けを想定しており、各項目を縦に並べる。<br>
+							上部メニューの<span class="btn btn-default btn-xs"><span class="glyphicon glyphicon-th-large" title="一覧の変形・区分モード"></span></span>
+							ボタンを押すことで切替ができる。<br>
+							カスタマイズで縦型を初期状態にすることも可。<br>
+						</aside>
+					</li>
+					<li>
+						<a href="#okianim_f8" class="livipage">ページネーション（目次）</a>
+						<aside id="okianim_f8" style="display:none">
+							データ数（行数）が増えた時、ページ分けする機能。<br>
+							検索機能の「表示件数」で1ページに表示する行数を指定できる。<br>
+						</aside>
+					</li>
+					<li>
+						<a href="#okianim_f9" class="livipage">一括削除/有効</a>
+						<aside id="okianim_f9" style="display:none">
+							まとめて削除および有効にする機能。<br>
+							一覧の左側チェックボックスにチェックを入れ、一覧の下にある「削除」または「有効」ボタンを押す。<br>
+						</aside>
+					</li>
+					<li>
+						<a href="#okianim_f10" class="livipage">ソート機能（並べ替え）</a>
+						<aside id="okianim_f10" style="display:none">
+							一覧の列名リンクをクリックするとその列のデータで昇順並べ替えを行う。<br>
+							もう一度クリックすると降順並べ替えを行う。<br>
+							並べ替え状態は「初期戻し機能」で解除することができる。<br>
+						</aside>
+					</li>
+					<li>
+						<a href="#okianim_f11" class="livipage">行入替機能</a>
+						<aside id="okianim_f11" style="display:none">
+							行を入れ替える機能。<br>
+							一覧の左側に存在する<span class="btn btn-info btn-xs">↑↓</span>ボタンをクリックを押すと、
+							行入替フォームが現れ、行を上下に移動させたり、指定位置にジャンプさせたりできる。<br>
+						</aside>
+					</li>
+					<li>
+						<a href="#cb_red_book_f12" class="livipage">ログインモード切替</a>
+						<aside id="cb_red_book_f12" style="display:none">
+							<aside>非公開の機能</aside>
+							ログインモードと一般モードの切り替えが可能。<br>
+							ログインモードのとき編集し、一般モードは閲覧という仕組みになる。<br>
+							当見本は一般モードとなっている。追加、編集、削除ボタンが表示されるが、ログインなので実際に追加/編集/削除はできない。<br>
+						</aside>
+					</li>
+					<li>
+						<a href="#cb_red_book_f13" class="livipage">CSVエスポート機能</a>
+						<aside id="cb_red_book_f13" style="display:none">
+							一覧をCSVファイルとしてダウンロードできる。<br>
+							設定内（<span><span class="glyphicon glyphicon-cog"></span></span>押下）のCSVエクスポートボタンでCSVダウンロードする。<br>
+							検索による絞り込みを行った場合、CSVデータも同様に絞り込まれる。
+							画面上の一覧は表示制限（LIMIT）がかけられるが、CSVデータは表示制限されない。検索結果はすべて出力される。<br>
+							<br>
+						</aside>
+					</li>
+				</ul>
+				
+			</td>
+		</tr><!-- 沖縄の動物 -->
+		
+		
 		<tr>
 			<td><a href="/cb_red_book">レッドデータブック</a><br>2018年</td>
 			<td>
@@ -236,6 +356,16 @@
 							ログインモードと一般モードの切り替えが可能。<br>
 							ログインモードのとき編集し、一般モードは閲覧という仕組みになる。<br>
 							当見本は一般モードとなっている。追加、編集、削除ボタンが表示されるが、ログインなので実際に追加/編集/削除はできない。<br>
+						</aside>
+					</li>
+					<li>
+						<a href="#cb_red_book_f13" class="livipage">CSVエスポート機能</a>
+						<aside id="cb_red_book_f13" style="display:none">
+							一覧をCSVファイルとしてダウンロードできる。<br>
+							設定内（<span><span class="glyphicon glyphicon-cog"></span></span>押下）のCSVエクスポートボタンでCSVダウンロードする。<br>
+							検索による絞り込みを行った場合、CSVデータも同様に絞り込まれる。
+							画面上の一覧は表示制限（LIMIT）がかけられるが、CSVデータは表示制限されない。検索結果はすべて出力される。<br>
+							<br>
 						</aside>
 					</li>
 				</ul>
