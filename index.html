@@ -14,6 +14,20 @@
 	<script src="/note_prg/js/bootstrap.min.js"></script>
 	<script src="/note_prg/js/livipage.js"></script>
 	<script src="/note_prg/js/ImgCompactK.js"></script>
+	
+	
+	<style>
+	.functions{
+		padding-top:20px;
+	}
+	.functions .livipage{
+		color:#f9f9f9;
+		margin-bottom:5px;
+	}
+	.img-responsive{
+		border:solid 3px #cccccc;
+	}
+	</style>
 </head>
 <body>
 <div id="header" ><h1>WEBツール＆ライブラリ | ワクガンス</h1></div>
@@ -46,111 +60,25 @@
 				画像<strong>ファイルアップロード</strong>を特色とするWEBアプリの見本。2画面からなる。<br>
 				開発期間は21時間。<br>
 				<aside>沖縄動物画面、動物カテゴリ画面から構成されている。</aside><br>
-				<input type="button" value="機能一覧" onclick="jQuery('#wai_okianim_ul').toggle(300)" class="btn btn-info" />
 				<a href="/okianim" class="btn btn-info">見本</a>
-				<ul id="wai_okianim_ul" style="display:none">
-					<li>
-						<a href="#okianim_fb1" class="livipage">ファイルアップロード機能</a>
-						<aside id="okianim_fb1" style="display:none">
-							編集フォームや新規入力フォームからファイルアップロードができる。<br>
-							独自で開発したJSライブラリ
-							「<a href="/note_prg/JavaScript/file_note.html#sec1-5">FileUploadsK.js</a>」を使っており、
-							ドラッグ＆ドロップや画像プレビューなどに対応している。
-						</aside>
-					</li>
-					<li>一覧表示</li>
-					<li>
-						追加/編集/複製/削除/<a href="#okianim_f2" class="livipage">抹消</a>
-						<aside id="okianim_f2" style="display:none">
-							削除と抹消の違い。<br>
-							削除は削除フラグを立てるだけでデータベースから消えるわけではない。<br>
-							抹消はデータそのものをデータベースから消去する。<br>
-							削除フラグがONのデータのみ抹消できる。（一度削除してから抹消という流れ）<br>
-						</aside>
-					</li>
-					<li>検索/詳細検索</li>
-					<li>
-						
-						<a href="#okianim_f4" class="livipage">初期戻し機能</a>
-						<aside id="okianim_f4" style="display:none">
-							最初にページを開いた時の状態に戻す機能。<br>
-							上部メニューに存在する
-							<span class="btn btn-info btn-xs"><span class="glyphicon glyphicon-certificate"></span></span>
-							ボタンを押すと、検索されている状態や、一覧ソートされている状態をリセットして初期状態に戻すことができる。
-						</aside>
-					</li>
-					<li>
-						<a href="#okianim_f5" class="livipage">列表示切替機能</a>
-						<aside id="okianim_f5" style="display:none">
-							一覧の特定の列を隠したり、再表示したりできる機能。<br>
-						</aside>
-					</li>
-					<li>
-						<a href="#okianim_f6" class="livipage">セッションクリア機能</a>
-						<aside id="okianim_f6" style="display:none">
-							当画面で保存しているセッションをクリアする機能。<br>
-						</aside>
-					</li>
-					<li>
-						<a href="#okianim_f7" class="livipage">スマホ用一覧</a>
-						<aside id="okianim_f7" style="display:none">
-							一覧表示は2タイプあり、行列型と縦型が存在する。<br>
-							行列型はPC向けであり、一般的な列と行からなるテーブル構造。
-							縦型はスマホ向けであり、各項目を縦に並べる。スマホで画面を開くと縦型になる。<br>
-							上部メニューの<span class="btn btn-default btn-xs"><span class="glyphicon glyphicon-th-large" title="一覧の変形・区分モード"></span></span>
-							ボタンを押すことで切替ができる。<br>
-						</aside>
-					</li>
-					<li>
-						<a href="#okianim_f8" class="livipage">ページネーション（目次）</a>
-						<aside id="okianim_f8" style="display:none">
-							データ数（行数）が増えた時、ページ分けする機能。<br>
-							検索機能の「表示件数」で1ページに表示する行数を指定できる。<br>
-						</aside>
-					</li>
-					<li>
-						<a href="#okianim_f9" class="livipage">一括削除/有効</a>
-						<aside id="okianim_f9" style="display:none">
-							まとめて削除および有効にする機能。<br>
-							一覧の左側チェックボックスにチェックを入れ、一覧の下にある「削除」または「有効」ボタンを押す。<br>
-						</aside>
-					</li>
-					<li>
-						<a href="#okianim_f10" class="livipage">ソート機能（並べ替え）</a>
-						<aside id="okianim_f10" style="display:none">
-							一覧の列名リンクをクリックするとその列のデータで昇順並べ替えを行う。<br>
-							もう一度クリックすると降順並べ替えを行う。<br>
-							並べ替え状態は「初期戻し機能」で解除することができる。<br>
-						</aside>
-					</li>
-					<li>
-						<a href="#okianim_f11" class="livipage">行入替機能</a>
-						<aside id="okianim_f11" style="display:none">
-							行を入れ替える機能。<br>
-							一覧の左側に存在する<span class="btn btn-info btn-xs">↑↓</span>ボタンをクリックを押すと、
-							行入替フォームが現れ、行を上下に移動させたり、指定位置にジャンプさせたりできる。<br>
-						</aside>
-					</li>
-					<li>
-						<a href="#cb_red_book_f12" class="livipage">ログインモード切替</a>
-						<aside id="cb_red_book_f12" style="display:none">
-							<aside>非公開の機能</aside>
-							ログインモードと一般モードの切り替えが可能。<br>
-							ログインモードのとき編集し、一般モードは閲覧という仕組みになる。<br>
-							当見本は一般モードとなっている。追加、編集、削除ボタンが表示されるが、ログインなので実際に追加/編集/削除はできない。<br>
-						</aside>
-					</li>
-					<li>
-						<a href="#cb_red_book_f13" class="livipage">CSVエスポート機能</a>
-						<aside id="cb_red_book_f13" style="display:none">
-							一覧をCSVファイルとしてダウンロードできる。<br>
-							設定内（<span><span class="glyphicon glyphicon-cog"></span></span>押下）のCSVエクスポートボタンでCSVダウンロードする。<br>
-							検索による絞り込みを行った場合、CSVデータも同様に絞り込まれる。
-							画面上の一覧は表示制限（LIMIT）がかけられるが、CSVデータは表示制限されない。検索結果はすべて出力される。<br>
-							<br>
-						</aside>
-					</li>
-				</ul>
+
+				<div class="functions" >
+					<a href="#crudbase_f1" class="livipage btn btn-primary btn-sm">一覧表示</a>
+					<a href="#crudbase_f2" class="livipage btn btn-primary btn-sm">追加/編集/複製/削除/抹消</a>
+					<a href="#crudbase_f3" class="livipage btn btn-primary btn-sm">検索/詳細検索</a>
+					<a href="#crudbase_f4" class="livipage btn btn-primary btn-sm">初期戻し機能</a>
+					<a href="#crudbase_f5" class="livipage btn btn-primary btn-sm">列表示切替機能</a>
+					<a href="#crudbase_f6" class="livipage btn btn-primary btn-sm">セッションクリア機能</a>
+					<a href="#crudbase_f7" class="livipage btn btn-primary btn-sm">スマホ用一覧</a>
+					<a href="#crudbase_f8" class="livipage btn btn-primary btn-sm">ページネーション</a>
+					<a href="#crudbase_f9" class="livipage btn btn-primary btn-sm">一括削除/有効</a>
+					<a href="#crudbase_f10" class="livipage btn btn-primary btn-sm">ソート機能</a>
+					<a href="#crudbase_f11" class="livipage btn btn-primary btn-sm">行入替機能</a>
+					<a href="#crudbase_f12" class="livipage btn btn-primary btn-sm">一般モードとログインモードの切替</a>
+					<a href="#crudbase_f13" class="livipage btn btn-primary btn-sm">CSVエスポート機能</a>
+					<a href="#crudbase_f14" class="livipage btn btn-primary btn-sm">ユーザー管理画面</a>
+					<a href="#crudbase_f15" class="livipage btn btn-danger btn-sm">ファイルアップロード機能</a>
+				</div>
 				
 			</td>
 		</tr><!-- 沖縄の動物 -->
@@ -162,92 +90,23 @@
 				基本的なWEBアプリの見本。3画面からなる。<br>
 				開発期間は33時間。<br>
 				<aside>絶滅危惧種画面、綱画面、絶滅危惧種カテゴリー画面。非公開であるがログインユーザー管理画面も存在する。</aside><br>
-				<input type="button" value="機能一覧" onclick="jQuery('#wai_cb_red_book_ul').toggle(300)" class="btn btn-info" />
 				<a href="/cb_red_book" class="btn btn-info">見本</a>
-				<ul id="wai_cb_red_book_ul" style="display:none">
-					<li>一覧表示</li>
-					<li>
-						追加/編集/削除/<a href="#cb_red_book_f2" class="livipage">抹消</a>
-						<aside id="cb_red_book_f2" style="display:none">
-							削除と抹消の違い。<br>
-							削除は削除フラグを立てるだけでデータベースから消えるわけではない。<br>
-							抹消はデータそのものをデータベースから消去する。<br>
-							削除フラグがONのデータのみ抹消できる。（一度削除してから抹消という流れ）<br>
-						</aside>
-					</li>
-					<li>検索/詳細検索</li>
-					<li>
-						
-						<a href="#cb_red_book_f4" class="livipage">初期戻し機能</a>
-						<aside id="cb_red_book_f4" style="display:none">
-							最初にページを開いた時の状態に戻す機能。<br>
-							上部メニューに存在する
-							<span class="btn btn-info btn-xs"><span class="glyphicon glyphicon-certificate"></span></span>
-							ボタンを押すと、検索されている状態や、一覧ソートされている状態をリセットして初期状態に戻すことができる。
-						</aside>
-					</li>
-					<li>
-						<a href="#cb_red_book_f5" class="livipage">列表示切替機能</a>
-						<aside id="cb_red_book_f5" style="display:none">
-							一覧の特定の列を隠したり、再表示したりできる機能。<br>
-						</aside>
-					</li>
-					<li>
-						<a href="#cb_red_book_f6" class="livipage">セッションクリア機能</a>
-						<aside id="cb_red_book_f6" style="display:none">
-							当画面で保存しているセッションをクリアする機能。<br>
-						</aside>
-					</li>
-					<li>
-						<a href="#cb_red_book_f7" class="livipage">一覧変形機能</a>
-						<aside id="cb_red_book_f7" style="display:none">
-							一覧表示は2タイプあり、行列型と縦型が存在する。<br>
-							行列型は一般的な列と行からなるテーブル構造。
-							縦型はスマホ向けを想定しており、各項目を縦に並べる。<br>
-							上部メニューの<span class="btn btn-default btn-xs"><span class="glyphicon glyphicon-th-large" title="一覧の変形・区分モード"></span></span>
-							ボタンを押すことで切替ができる。<br>
-							カスタマイズで縦型を初期状態にすることも可。<br>
-						</aside>
-					</li>
-					<li>
-						<a href="#cb_red_book_f8" class="livipage">ページネーション（目次）</a>
-						<aside id="cb_red_book_f8" style="display:none">
-							データ数（行数）が増えた時、ページ分けする機能。<br>
-							検索機能の「表示件数」で1ページに表示する行数を指定できる。<br>
-						</aside>
-					</li>
-					<li>
-						<a href="#cb_red_book_f9" class="livipage">一括削除/有効</a>
-						<aside id="cb_red_book_f9" style="display:none">
-							まとめて削除および有効にする機能。<br>
-							一覧の左側チェックボックスにチェックを入れ、一覧の下にある「削除」または「有効」ボタンを押す。<br>
-						</aside>
-					</li>
-					<li>
-						<a href="#cb_red_book_f10" class="livipage">ソート機能（並べ替え）</a>
-						<aside id="cb_red_book_f10" style="display:none">
-							一覧の列名リンクをクリックするとその列のデータで昇順並べ替えを行う。<br>
-							もう一度クリックすると降順並べ替えを行う。<br>
-							並べ替え状態は「初期戻し機能」で解除することができる。<br>
-						</aside>
-					</li>
-					<li>
-						<a href="#cb_red_book_f11" class="livipage">行入替機能</a>
-						<aside id="cb_red_book_f11" style="display:none">
-							行を入れ替える機能。<br>
-							一覧の左側に存在する<span class="btn btn-info btn-xs">↑↓</span>ボタンをクリックを押すと、
-							行入替フォームが現れ、行を上下に移動させたり、指定位置にジャンプさせたりできる。<br>
-						</aside>
-					</li>
-					<li>
-						<a href="#cb_red_book_f12" class="livipage">ログインモード切替</a>
-						<aside id="cb_red_book_f12" style="display:none">
-							<aside>非公開の機能</aside>
-							ログインモードと一般モードを切り替えることができる。<br>
-							当見本は一般モードで追加、編集、削除ができるようにしてあるが、本来ならログインモードのとき編集し、一般モードは閲覧という仕組みになる。<br>
-						</aside>
-					</li>
-				</ul>
+
+				<div class="functions" >
+					<a href="#crudbase_f1" class="livipage btn btn-primary btn-sm">一覧表示</a>
+					<a href="#crudbase_f2" class="livipage btn btn-primary btn-sm">追加/編集/複製/削除/抹消</a>
+					<a href="#crudbase_f3" class="livipage btn btn-primary btn-sm">検索/詳細検索</a>
+					<a href="#crudbase_f4" class="livipage btn btn-primary btn-sm">初期戻し機能</a>
+					<a href="#crudbase_f5" class="livipage btn btn-primary btn-sm">列表示切替機能</a>
+					<a href="#crudbase_f6" class="livipage btn btn-primary btn-sm">セッションクリア機能</a>
+					<a href="#crudbase_f7" class="livipage btn btn-primary btn-sm">スマホ用一覧</a>
+					<a href="#crudbase_f8" class="livipage btn btn-primary btn-sm">ページネーション</a>
+					<a href="#crudbase_f9" class="livipage btn btn-primary btn-sm">一括削除/有効</a>
+					<a href="#crudbase_f10" class="livipage btn btn-primary btn-sm">ソート機能</a>
+					<a href="#crudbase_f11" class="livipage btn btn-primary btn-sm">行入替機能</a>
+					<a href="#crudbase_f12" class="livipage btn btn-primary btn-sm">一般モードとログインモードの切替</a>
+					<a href="#crudbase_f14" class="livipage btn btn-primary btn-sm">ユーザー管理画面</a>
+				</div>
 				
 			</td>
 		</tr>
@@ -263,117 +122,179 @@
 				そのためWordPressプラグインやサーバーサイドJavaなどにも対応できる。<br>ライセンスはMITにしている。<br>
 				随時、新機能を開発してはバージョンアップを重ねている。<br>
 
-				<input type="button" value="機能一覧" onclick="jQuery('#wai_cake_demo_ul').toggle(300)" class="btn btn-info" />
 				<a href="/cake_demo" class="btn btn-info">見本</a>
-				<ul id="wai_cake_demo_ul" style="display:none">
-					<li>
-						<a href="#cake_demo_fb1" class="livipage">ファイルアップロード機能</a>
-						<aside id="cake_demo_fb1" style="display:none">
-							編集フォームや新規入力フォームからファイルアップロードができる。<br>
-							独自で開発したJSライブラリ
-							「<a href="/note_prg/JavaScript/file_note.html#sec1-5">FileUploadsK.js</a>」を使っており、
-							ドラッグ＆ドロップや画像プレビューなどに対応している。
-						</aside>
-					</li>
-					<li>一覧表示</li>
-					<li>
-						追加/編集/複製/削除/<a href="#cake_demo_f2" class="livipage">抹消</a>
-						<aside id="cake_demo_f2" style="display:none">
-							削除と抹消の違い。<br>
-							削除は削除フラグを立てるだけでデータベースから消えるわけではない。<br>
-							抹消はデータそのものをデータベースから消去する。<br>
-							削除フラグがONのデータのみ抹消できる。（一度削除してから抹消という流れ）<br>
-						</aside>
-					</li>
-					<li>検索/詳細検索</li>
-					<li>
-						
-						<a href="#cake_demo_f4" class="livipage">初期戻し機能</a>
-						<aside id="cake_demo_f4" style="display:none">
-							最初にページを開いた時の状態に戻す機能。<br>
-							上部メニューに存在する
-							<span class="btn btn-info btn-xs"><span class="glyphicon glyphicon-certificate"></span></span>
-							ボタンを押すと、検索されている状態や、一覧ソートされている状態をリセットして初期状態に戻すことができる。
-						</aside>
-					</li>
-					<li>
-						<a href="#cake_demo_f5" class="livipage">列表示切替機能</a>
-						<aside id="cake_demo_f5" style="display:none">
-							一覧の特定の列を隠したり、再表示したりできる機能。<br>
-						</aside>
-					</li>
-					<li>
-						<a href="#cake_demo_f6" class="livipage">セッションクリア機能</a>
-						<aside id="cake_demo_f6" style="display:none">
-							当画面で保存しているセッションをクリアする機能。<br>
-						</aside>
-					</li>
-					<li>
-						<a href="#okianim_f7" class="livipage">スマホ用一覧</a>
-						<aside id="okianim_f7" style="display:none">
-							一覧表示は2タイプあり、行列型と縦型が存在する。<br>
-							行列型はPC向けであり、一般的な列と行からなるテーブル構造。
-							縦型はスマホ向けであり、各項目を縦に並べる。スマホで画面を開くと縦型になる。<br>
-							上部メニューの<span class="btn btn-default btn-xs"><span class="glyphicon glyphicon-th-large" title="一覧の変形・区分モード"></span></span>
-							ボタンを押すことで切替ができる。<br>
-						</aside>
-					</li>
-					<li>
-						<a href="#cake_demo_f8" class="livipage">ページネーション（目次）</a>
-						<aside id="cake_demo_f8" style="display:none">
-							データ数（行数）が増えた時、ページ分けする機能。<br>
-							検索機能の「表示件数」で1ページに表示する行数を指定できる。<br>
-						</aside>
-					</li>
-					<li>
-						<a href="#cake_demo_f9" class="livipage">一括削除/有効</a>
-						<aside id="cake_demo_f9" style="display:none">
-							まとめて削除および有効にする機能。<br>
-							一覧の左側チェックボックスにチェックを入れ、一覧の下にある「削除」または「有効」ボタンを押す。<br>
-						</aside>
-					</li>
-					<li>
-						<a href="#cake_demo_f10" class="livipage">ソート機能（並べ替え）</a>
-						<aside id="cake_demo_f10" style="display:none">
-							一覧の列名リンクをクリックするとその列のデータで昇順並べ替えを行う。<br>
-							もう一度クリックすると降順並べ替えを行う。<br>
-							並べ替え状態は「初期戻し機能」で解除することができる。<br>
-						</aside>
-					</li>
-					<li>
-						<a href="#cake_demo_f11" class="livipage">行入替機能</a>
-						<aside id="cake_demo_f11" style="display:none">
-							行を入れ替える機能。<br>
-							一覧の左側に存在する<span class="btn btn-info btn-xs">↑↓</span>ボタンをクリックを押すと、
-							行入替フォームが現れ、行を上下に移動させたり、指定位置にジャンプさせたりできる。<br>
-						</aside>
-					</li>
-					<li>
-						<a href="#cb_red_book_f12" class="livipage">ログインモード切替</a>
-						<aside id="cb_red_book_f12" style="display:none">
-							<aside>非公開の機能</aside>
-							ログインモードと一般モードの切り替えが可能。<br>
-							ログインモードのとき編集し、一般モードは閲覧という仕組みになる。<br>
-							当見本は一般モードとなっている。追加、編集、削除ボタンが表示されるが、ログインなので実際に追加/編集/削除はできない。<br>
-						</aside>
-					</li>
-					<li>
-						<a href="#cb_red_book_f13" class="livipage">CSVエスポート機能</a>
-						<aside id="cb_red_book_f13" style="display:none">
-							一覧をCSVファイルとしてダウンロードできる。<br>
-							設定内（<span><span class="glyphicon glyphicon-cog"></span></span>押下）のCSVエクスポートボタンでCSVダウンロードする。<br>
-							検索による絞り込みを行った場合、CSVデータも同様に絞り込まれる。
-							画面上の一覧は表示制限（LIMIT）がかけられるが、CSVデータは表示制限されない。検索結果はすべて出力される。<br>
-							<br>
-						</aside>
-					</li>
-				</ul>
+
+				<div class="functions" >
+					<a href="#crudbase_f1" class="livipage btn btn-primary btn-sm">一覧表示</a>
+					<a href="#crudbase_f2" class="livipage btn btn-primary btn-sm">追加/編集/複製/削除/抹消</a>
+					<a href="#crudbase_f3" class="livipage btn btn-primary btn-sm">検索/詳細検索</a>
+					<a href="#crudbase_f4" class="livipage btn btn-primary btn-sm">初期戻し機能</a>
+					<a href="#crudbase_f5" class="livipage btn btn-primary btn-sm">列表示切替機能</a>
+					<a href="#crudbase_f6" class="livipage btn btn-primary btn-sm">セッションクリア機能</a>
+					<a href="#crudbase_f7" class="livipage btn btn-primary btn-sm">スマホ用一覧</a>
+					<a href="#crudbase_f8" class="livipage btn btn-primary btn-sm">ページネーション</a>
+					<a href="#crudbase_f9" class="livipage btn btn-primary btn-sm">一括削除/有効</a>
+					<a href="#crudbase_f10" class="livipage btn btn-primary btn-sm">ソート機能</a>
+					<a href="#crudbase_f11" class="livipage btn btn-primary btn-sm">行入替機能</a>
+					<a href="#crudbase_f12" class="livipage btn btn-primary btn-sm">一般モードとログインモードの切替</a>
+					<a href="#crudbase_f13" class="livipage btn btn-primary btn-sm">CSVエスポート機能</a>
+					<a href="#crudbase_f14" class="livipage btn btn-primary btn-sm">ユーザー管理画面</a>
+					<a href="#crudbase_f15" class="livipage btn btn-primary btn-sm">ファイルアップロード機能</a>
+				</div>
 				
 			</td>
 		</tr>
 	</tbody></table>
-
 </div>
+
+<!-- 機能説明 -->
+<div id="function_note" style="display:none">
+
+	<div id="crudbase_f1"><!-- 一覧表示 -->
+		ソートやページネーション機能を備える一覧を表示する。<br>
+		<br>
+	</div>
+
+	<div id="crudbase_f2"><!-- 追加/編集/複製/削除/抹消 -->
+		
+		「追加」、「編集」、「削除」は基本的なCRUD機能である。<br>
+		ただ「削除」は削除フラグをONにするだけで実際にDBから消去するわけではない。<br>
+		「抹消」はデータそのものをデータベースから消去する(DELETE)。
+		削除フラグがONのデータのみ抹消できる。（一度削除してから抹消という流れ）<br>
+		「複製」機能は文字通りその行を複製する機能。<br>
+		<br>
+
+		図1(追加)<img src="img/index/crudbase_f2a1.png" class="img-responsive" alt="CrudBaseの追加/編集/複製/削除/抹消" /><br>
+		図2(編集/複製/削除)<img src="img/index/crudbase_f2a2.png" class="img-responsive" alt="CrudBaseの追加/編集/複製/削除/抹消" /><br>
+		図3(抹消)<img src="img/index/crudbase_f2a3.png" class="img-responsive" alt="CrudBaseの追加/編集/複製/削除/抹消" /><br>
+	</div>
+
+	<div id="crudbase_f3"><!-- 検索/詳細検索 -->
+		検索機能は2種類あり、メインの検索と詳細検索から構成されている。<br>
+		メイン検索は複数の特定列（主に文字系）を検索対象にしている。
+		詳細検索は各列ごとに細かい検索指定ができる。<br>
+		<br>
+		図<img src="img/index/crudbase_f3.png" class="img-responsive" alt="CrudBaseの検索/詳細検索" /><br>
+	</div>
+
+	<div id="crudbase_f4"><!-- 初期戻し機能 -->
+		最初にページを開いた時の状態に戻す機能。<br>
+		上部メニューに存在する
+		<span class="btn btn-info btn-xs"><span class="glyphicon glyphicon-certificate"></span></span>
+		ボタンを押すと、検索されている状態や、一覧ソートされている状態をリセットして初期状態に戻すことができる。<br>
+		図<img src="img/index/crudbase_f4.png" class="img-responsive" alt="CrudBaseの初期戻し機能" /><br>
+	</div>
+
+	<div id="crudbase_f5"><!-- 列表示切替機能 -->
+		一覧の特定の列を隠したり、再表示したりできる機能。<br>
+		図<img src="img/index/crudbase_f5.png" class="img-responsive" alt="CrudBaseの列表示切替機能" /><br>
+	</div>
+
+	<div id="crudbase_f6"><!-- セッションクリア機能 -->
+		当画面で保存しているセッションをクリアする機能。<br>
+		図<img src="img/index/crudbase_f6.png" class="img-responsive" alt="CrudBaseのセッションクリア機能" /><br>
+	</div>
+
+	<div id="crudbase_f7"><!-- スマホ用一覧 -->
+		一覧表示は2タイプあり、行列型と縦型が存在する。<br>
+		行列型はPC向けであり、一般的な列と行からなるテーブル構造。
+		縦型はスマホ向けであり、各項目を縦に並べる。スマホで画面を開くと縦型になる。<br>
+		上部メニューの<span class="btn btn-default btn-xs"><span class="glyphicon glyphicon-th-large" title="一覧の変形・区分モード"></span></span>
+		ボタンを押すことで切替ができる。<br>
+		図<img src="img/index/crudbase_f7.png" class="img-responsive" alt="CrudBaseのスマホ用一覧" /><br>
+	</div>
+
+	<div id="crudbase_f8"><!-- ページネーション（目次） -->
+		データ数（行数）が増えた時、ページ分けする機能。目次が表示される。<br>
+		検索機能の「表示件数」で1ページに表示する行数を指定できる。<br>
+		図<img src="img/index/crudbase_f8.png" class="img-responsive" alt="CrudBaseのページネーション" /><br>
+	</div>
+
+	<div id="crudbase_f9"><!-- 一括削除/有効 -->
+		まとめて削除および有効にする機能。<br>
+		一覧の左側チェックボックスにチェックを入れ、一覧の下にある「削除」または「有効」ボタンを押す。<br>
+		図<img src="img/index/crudbase_f9.png" class="img-responsive" alt="CrudBaseのソート機能" /><br>
+	</div>
+
+	<div id="crudbase_f10"><!-- ソート機能 -->
+		一覧の列名リンクをクリックするとその列のデータで昇順並べ替えを行う。<br>
+		もう一度クリックすると降順並べ替えを行う。<br>
+		並べ替え状態は「初期戻し機能」で解除することができる。<br>
+		図<img src="img/index/crudbase_f10.png" class="img-responsive" alt="CrudBaseのソート機能" /><br>
+	</div>
+
+	<div id="crudbase_f11"><!-- 行入替機能-->
+		行を入れ替える機能。<br>
+		一覧の左側に存在する<span class="btn btn-info btn-xs">↑↓</span>ボタンをクリックを押すと、
+		行入替フォームが現れ、行を上下に移動させたり、指定位置にジャンプさせたりできる。<br>
+		図<img src="img/index/crudbase_f11.png" class="img-responsive" alt="CrudBaseの行入替機能" /><br>
+	</div>
+
+	<div id="crudbase_f12"><!-- 一般モードとログインモードの切替 -->
+		当システムには一般モードとログインモードが存在する。<br>
+		一般モードはログインなしでデータの編集が可能。<br>
+		ログインモードにするとログインを必要とする画面になる。<br>
+		<aside>見本では一般モードとなっている。</aside>
+		図1<img src="img/index/crudbase_f12a1.png" class="img-responsive" alt="CrudBaseの一般モードとログインモードの切替" />
+		図2<img src="img/index/crudbase_f12a2.png" class="img-responsive" alt="CrudBaseの一般モードとログインモードの切替" />
+		図3<img src="img/index/crudbase_f12a3.png" class="img-responsive" alt="CrudBaseの一般モードとログインモードの切替" />
+	</div>
+
+	<div id="crudbase_f13"><!-- CSVエスポート機能 -->
+		一覧をCSVファイルとしてダウンロードできる。<br>
+		設定内（<span><span class="glyphicon glyphicon-cog"></span></span>押下）のCSVエクスポートボタンでCSVダウンロードする。<br>
+		検索による絞り込みを行った場合、出力されるCSVファイルのデータも同様に絞り込まれる。
+		ただし検索の表示制限の影響は受けない。検索結果はすべて出力される。（LIMIT制限なし）<br>
+		<br>
+		<img src="img/index/crudbase_f13.png" class="img-responsive" alt="CrudBaseのCSVエスポート機能" /><br>
+		<br>
+	</div>
+	
+	<div id="crudbase_f14"><!-- ユーザー管理画面 -->
+		ログインユーザーを管理する画面。<br>
+		システムにログインするユーザーのアカウントを追加、編集、削除することができる。<br>
+		<aside>見本では非公開</aside>
+		<br>
+		
+		<p>ユーザー管理画面の図例</p>
+		<img src="img/index/crudbase_f14.png" class="img-responsive" alt="CrudBaseのユーザー管理画面" />
+		<aside>※パスワードは暗号化された文字列。</aside><br>
+		
+		<p>権限について</p>
+		ユーザーの権限は複数あり、マスター、管理者、クライアント、オペレータがある。<br>
+		上位権限者は下位権限者の変更（追加、編集、削除）が可能。
+		例えば管理者権限ユーザーはクライアントユーザーとオペレータユーザーを変更できる。<br>
+		マスター権限ユーザーであればすべてのユーザーを変更することができる。<br>
+		下位権限であるオペレータは他のユーザーの変更はできず、ユーザー管理画面自体にアクセスできない。<br>
+		<br>
+		
+		<p>パスワードについて</p>
+		セキュリティのためパスワードは暗号化してＤＢに保存している。複合化(※)はできない。<br>
+		そのため、パスワードを入力したユーザーしかパスワードを知りえないという仕様になっている。<br>
+		もしパスワードを忘れた場合は上位権限者が再設定するという仕様になっている。<br>
+		ユーザー管理画面にパスワードらしき文字列が表示されているが、これは暗号化された文字列である。<br>
+		<aside>
+		※複合化<br>
+		複合化とは暗号化前の文字列に戻すこと。<br>
+		当機能では不可逆の暗号化を行っているため複合化は理論上をほぼ不可能。<br>
+		</aside>
+		
+	</div>
+
+	<div id="crudbase_f15"><!-- ファイルアップロード機能 -->
+		編集フォームや新規入力フォームからファイルアップロードができる。プレビュー画像をクリックするとファイル選択ダイアログが開く。<br>
+		独自で開発したJSライブラリ
+		「<a href="/note_prg/JavaScript/file_note.html#sec1-5">FileUploadsK.js</a>」を使っており、
+		ドラッグ＆ドロップや画像プレビューなどに対応している。
+		<img src="img/index/crudbase_f15.png" class="img-responsive" alt="CrudBaseのファイルアップロード機能" /><br>
+		<br>
+	</div>
+	
+</div>
+
+
+
+
 
 <div id="web_tool_index" class="sec3">
 	<h3>WEBツール</h3>
